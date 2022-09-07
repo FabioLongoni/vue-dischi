@@ -1,6 +1,7 @@
+@import './variables';
 
 .card {
-  background-color: #2e3a46;
+  background-color: $bg__color__light;
   padding: 1rem;
   .card__content {
     text-align: center;
