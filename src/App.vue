@@ -10,7 +10,7 @@
 <script>
 import MainComponent from './components/MainComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
-
+import "@fontsource/montserrat";
 
 export default {
   name: 'App',
