@@ -38,6 +38,6 @@ export default {
     display: grid;
     grid-template-columns: repeat(5,1fr);
     gap: 2rem;
-    max-width: 1000px;
+    max-width: 900px;
   }
 </style>

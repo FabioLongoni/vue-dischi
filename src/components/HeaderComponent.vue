@@ -19,7 +19,7 @@ export default {
     background-color: $bg__color__light;
     padding: 0.5rem 1.5rem;
     img {
-      width: 40px;
+      width: 35px;
     }
   }
 </style>
