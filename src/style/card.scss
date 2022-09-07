@@ -1,0 +1,17 @@
+
+.card {
+  background-color: #2e3a46;
+  padding: 1rem;
+  .card__content {
+    text-align: center;
+    .album {
+      color: white;
+      text-transform: uppercase;
+      padding: 1.5rem 0;
+    }
+    .info__album {
+      color: #827e79;
+      font-size: 12px;
+    } 
+  }
+}

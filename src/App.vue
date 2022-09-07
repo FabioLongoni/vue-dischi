@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
-    <MainComponent/>
-  </div>
+  <body>
+    <div id="app">
+      <MainComponent/>
+    </div>
+  </body>
 </template>
 
 <script>

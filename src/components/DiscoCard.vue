@@ -3,8 +3,10 @@
     <div class="card__content">
       <img :src="poster" alt="">
       <h3 class="album">{{ title }}</h3>
-      <div class="author">{{ author }}</div>
-      <div class="year">{{ year }}</div>
+      <div class="info__album">
+        <div class="author">{{ author }}</div>
+        <div class="year">{{ year }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +22,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+  @import '../style/card.scss';
 </style>
