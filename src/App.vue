@@ -1,10 +1,8 @@
 <template>
-  <body>
-    <div id="app">
-      <HeaderComponent/>
-      <MainComponent/>
-    </div>
-  </body>
+  <div id="app">
+    <HeaderComponent @search="onSearch"/>
+    <MainComponent :search='searchProp'/>
+  </div> 
 </template>
 
 <script>
@@ -14,10 +12,20 @@ import "@fontsource/montserrat";
 
 export default {
   name: 'App',
+  data() {
+    return {
+      searchProp:'',
+    }
+  },
   components: {
     MainComponent,
-    HeaderComponent
-}
+    HeaderComponent,
+  },
+  methods: {
+    onSearch(data) {
+      this.searchProp = data;
+    }
+  }, 
 }
 </script>
 

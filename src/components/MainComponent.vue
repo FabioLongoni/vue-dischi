@@ -1,34 +1,54 @@
 <template>
   <div class="container"> 
-    <DiscoCard v-for="(disco,i) in discoList" :key="i" 
-      :poster="disco.poster"
-      :title="disco.title"
-      :author="disco.author"
-      :year="disco.year"
+    <AlbumCard v-for="(album,i) in filteredAlbums" :key="i" 
+      :poster="album.poster"
+      :title="album.title"
+      :author="album.author"
+      :year="album.year"
     />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import DiscoCard from './DiscoCard.vue';
+import AlbumCard from './AlbumCard.vue';
 
 export default {
     name: "MainComponent",
+    props: {
+      search: {
+        type: String,
+        default:'',
+      }
+    },
     data() {
         return {
-            discoList: [],
+            albumsList: [],
         };
+    },
+    computed: {
+      filteredAlbums() {
+        return this.albumsList.filter((el) => {
+          const genre = el.genre.toLowerCase();
+          const find = this.search.toLowerCase();
+
+          if(genre.includes(find)) {
+            return true;
+          }
+
+          return false;
+        }) 
+      }
     },
     created() {
         axios
             .get("https://flynn.boolean.careers/exercises/api/array/music")
             .then((res) => {
-            this.discoList = res.data.response;
-            console.log(res.data);
+            this.albumsList = res.data.response;
+            console.log(res.data.response);
         });
     },
-    components: { DiscoCard }
+    components: { AlbumCard }
 };
 </script>
 
