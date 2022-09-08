@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderComponent @search="onSearch"/>
-    <MainComponent :search='searchProp'/>
+    <HeaderComponent @search="onChange"/>
+    <MainComponent :search='changeGenre'/>
   </div> 
 </template>
 
@@ -14,7 +14,7 @@ export default {
   name: 'App',
   data() {
     return {
-      searchProp:'',
+      changeGenre:'',
     }
   },
   components: {
@@ -22,8 +22,9 @@ export default {
     HeaderComponent,
   },
   methods: {
-    onSearch(data) {
-      this.searchProp = data;
+    onChange(data) {
+      this.changeGenre = data;
+      console.log(data);
     }
   }, 
 }

@@ -29,8 +29,8 @@ export default {
     computed: {
       filteredAlbums() {
         return this.albumsList.filter((el) => {
-          const genre = el.genre.toLowerCase();
-          const find = this.search.toLowerCase();
+          const genre = el.genre;
+          const find = this.search;
 
           if(genre.includes(find)) {
             return true;

@@ -4,9 +4,8 @@
       <img src="https://pnggrid.com/wp-content/uploads/2021/05/Spotify-PNG-Logo-768x767.png" alt="logo-spotify">
     </a>
     <div class="search__bar">
-      <input v-model="search" @keyup.enter="$emit('search',search)" type="text">
-      <select name="Genre" id="">
-        <option value="Genre" default>Genre</option>
+      <select name="Genre" id="musical-genre" v-model="search" @change="$emit('search',search)">
+        <option value="default">All</option>
         <option value="Rock">Rock</option>
         <option value="Metal">Metal</option>
         <option value="Jazz">Jazz</option>
@@ -37,6 +36,14 @@ export default {
     align-items: center;
     img {
       width: 35px;
+    }
+    select {
+      width: 150px;
+      padding: 0.1rem 0.5rem;
+      cursor: pointer;
+      border: none;
+      background-color:$bg__color;
+      color: #827e79;
     }
   }
 </style>
