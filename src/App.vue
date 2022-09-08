@@ -24,7 +24,6 @@ export default {
   methods: {
     onChange(data) {
       this.changeGenre = data;
-      console.log(data);
     }
   }, 
 }

@@ -5,7 +5,7 @@
     </a>
     <div class="search__bar">
       <select name="Genre" id="musical-genre" v-model="search" @change="$emit('search',search)">
-        <option value="default">All</option>
+        <option value="">All albums</option>
         <option value="Rock">Rock</option>
         <option value="Metal">Metal</option>
         <option value="Jazz">Jazz</option>
@@ -44,6 +44,7 @@ export default {
       border: none;
       background-color:$bg__color;
       color: #827e79;
+      text-transform: uppercase;
     }
   }
 </style>
